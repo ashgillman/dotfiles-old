@@ -1,0 +1,72 @@
+;-*-Emacs-Lisp-*-
+
+(package-initialize)
+
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
+;; http://stackoverflow.com/questions/10092322/how-to-automatically-install-emacs-packages-by-specifying-a-list-of-package-name/10095853#10095853
+(defun ensure-package-installed (&rest packages)
+  "Assure every package is installed, ask for installation if it’s not.
+
+Return a list of installed packages or nil for every skipped package."
+  (mapcar
+   (lambda (package)
+     (if (package-installed-p package)
+         nil
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+           (package-install package)
+         package)))
+   packages))
+
+;; Make sure to have downloaded archive description.
+(or (file-exists-p package-user-dir)
+    (package-refresh-contents))
+
+;; Activate installed packages
+(package-initialize)
+
+;; Assuming you wish to install "iedit" and "magit"
+(ensure-package-installed 'iedit 
+                          'projectile
+                          'magit
+			  'helm
+			  'powerline
+			  'powerline-evil)
+
+(require 'project-root)
+(require 'init-utils)
+(require 'init-elpa)
+(require 'init-evil)
+
+;; powerline
+(require 'powerline-evil)
+(powerline-evil-vim-color-theme)
+
+;; load solarized color theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized/")
+(load-theme 'solarized t)
+
+;; autocomplete
+(require-package 'auto-complete)
+(ac-config-default)
+
+(add-to-list 'load-path "~/.emacs.d/lisp/progmodes")
+
+;; OCTAVE
+(add-to-list 'exec-path "/usr/local/bin") ;; octave is here
+(autoload 'octave-mode "octave-mod" nil t)
+(autoload 'run-octave "octave-inf" nil t)
+(setq auto-mode-alist
+      (cons '("\\.m$" . octave-mode) auto-mode-alist))
+(add-hook 'octave-mode-hook
+          (lambda ()
+            (abbrev-mode 1)
+            (auto-fill-mode 1)
+            (if (eq window-system 'x)
+                (font-lock-mode 1))))
+
+(require 'ac-octave)
+(defun ac-octave-mode-setup ()
+(setq ac-sources '(ac-source-octave)))
+(add-hook 'octave-mode-hook
+'(lambda () (ac-octave-mode-setup)))

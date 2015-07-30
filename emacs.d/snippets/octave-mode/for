@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: for index = range ... endfor
+# key: for
+# --
+for ${1:index} = ${2:range}
+    $0
+endfor
