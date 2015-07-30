@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: function y = f (...) ... endfunction
+# key: func
+# --
+function ${1:result} = ${2:name} (${3:params})
+
+	 $0
+
+endfunction
