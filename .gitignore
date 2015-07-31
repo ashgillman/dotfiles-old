@@ -1,0 +1,5 @@
+/.DS_Store
+/emacs.d/auto-save-list/.saves-65164-MBP.local~
+*.cache
+/emacs.d/elpa/coffee-mode-20150602.2205/coffee-mode-autoloads.el
+/emacs.d/elpa/coffee-mode-20150602.2205/coffee-mode-pkg.el
