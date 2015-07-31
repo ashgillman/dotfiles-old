@@ -2,7 +2,8 @@
            (maybe-require-package 'evil-leader))
 
   (setq org-agenda-text-search-extra-files '(agenda-archives))
-  (setq org-agenda-files '("~/Documents/workspace/org/"))
+  (load-library "find-lisp")
+  (setq org-agenda-files (find-lisp-find-files "~/Documents/workspace/org" "\.org$"))
 
   (evil-leader/set-key-for-mode 'org-mode
     "t"  'org-set-tags
@@ -41,7 +42,7 @@
               (?n . "[[notes:%l][%l-notes]]")
               (?p . "[[papers:%l][%l-paper]]")
               (?t . "%t")
-              (?h . "**** %t\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n[[papers:%l][%l-paper]]\n[[bib:%l][BibTeX]]")))))
+              (?h . "**** %t\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n*****     :noexport:\n[[papers:%l][%l-paper]] [[bib:%l][BibTeX]]")))))
     (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
     (define-key org-mode-map (kbd "C-c (") 'org-mode-reftex-search))
 
