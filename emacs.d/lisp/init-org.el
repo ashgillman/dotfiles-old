@@ -3,18 +3,33 @@
 
   (setq org-agenda-text-search-extra-files '(agenda-archives))
   (load-library "find-lisp")
-  (setq org-agenda-files (find-lisp-find-files "~/Documents/workspace/org" "\.org$"))
+  (setq org-agenda-files (find-lisp-find-files "~/Dropbox/org" "\.org$"))
 
   (evil-leader/set-key-for-mode 'org-mode
     "t"  'org-set-tags
-    "p"  '(lambda ()
+    "P"  '(lambda ()
             (interactive)
             (org-insert-property-drawer))
+    "p"  'my-org-screenshot
     "d"  'org-deadline
     "s"  'org-schedule
     "a"  'org-agenda
     "ns" 'org-narrow-to-subtree
     "$"  'org-archive-subtree)
+
+  (defun my-org-screenshot ()
+    "Take a screenshot into a time stamped unique-named file in the
+  same directory as the org-buffer and insert a link to this file."
+    (interactive)
+    (setq filename
+          (concat
+           (make-temp-name
+            (concat (file-name-nondirectory (buffer-file-name))
+                    "_"
+                    (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
+    (call-process "screencapture" nil nil nil "-i" filename)
+    (insert (concat "[[./" filename "]]"))
+    (org-display-inline-images))
 
   (add-hook 'org-mode-hook
             (lambda ()
@@ -74,5 +89,8 @@
   (org-add-link-type "rtcite" 
                  'org-bibtex-open
                  'my-rtcite-export-handler))
+
+(when (maybe-require-package 'org-ac)
+  (org-ac/config-default))
 
 (provide 'init-org)

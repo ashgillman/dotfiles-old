@@ -11,6 +11,8 @@
 (define-key global-map (kbd "C-c C-u") 'insert-char) ;; "u" for Unicode, get it?
 (define-key global-map (kbd "C-c l")   'dictionary-lookup-definition)
 (define-key global-map (kbd "C-c d f") 'find-name-dired)
+(define-key global-map (kbd "M-j") 'evil-window-next)
+(define-key global-map (kbd "M-k") 'evil-window-prev)
 
 ;; C-v is "visual block" in normal mode, but use it for "paste" in insert mode.
 (when (equal system-type 'darwin)

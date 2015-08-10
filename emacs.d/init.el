@@ -13,7 +13,9 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(let ((default-directory (expand-file-name "lisp" user-emacs-directory)))
+  (normal-top-level-add-to-load-path '("."))
+  (normal-top-level-add-subdirs-to-load-path))
 (add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
 (add-to-list 'exec-path "/usr/local/bin")
 
@@ -98,6 +100,7 @@
 (maybe-require-package 'wakatime-mode)
 (maybe-require-package 'coffee-mode)
 (maybe-require-package 'flymake-coffee)
+(maybe-require-package 'htmlize)
 
 (require 'mmm-mode)
 (setq mmm-global-mode 'maybe)
@@ -279,14 +282,14 @@
  '(js-indent-level 2)
  '(org-agenda-files
    (quote
-    ("/Users/Ash/Documents/workspace/org/phd/phd.org" "/Users/Ash/Documents/workspace/org/phd/bibliography.org" "/Users/Ash/Documents/workspace/org/phd/annotated-bibliography.org" "/Users/Ash/Documents/workspace/org/org-bib-template/annotated-biblio-template.org" "/Users/Ash/Documents/workspace/org/org-bib-template/14c-workshop.org")))
+    ("/Users/Ash/Dropbox/org/phd/phd.org" "/Users/Ash/Dropbox/org/phd/bibliography.org" "/Users/Ash/Dropbox/org/litProgrammingTutR.org" "/Users/Ash/Dropbox/org/Getting Started with Orgzly.org" "/Users/Ash/Dropbox/org/general.org")))
  '(org-blank-before-new-entry (quote ((heading) (plain-list-item))))
- '(org-directory "~/Documents/workspace/org")
- '(org-mobile-directory "~/Documents/workspace/org/mobile")
- '(org-mobile-inbox-for-pull "~/Documents/workspace/org/mobile/capture.org")
+ '(org-directory "~/Dropbox/org")
+ '(org-mobile-directory "~/Dropbox/org/mobile")
+ '(org-mobile-inbox-for-pull "~/Dropbox/org/mobile/capture.org")
  '(package-selected-packages
    (quote
-    (flymake-coffee wakatime-mode zenburn-theme yasnippet yaml-mode wgrep-ag web-mode w3m twittering-mode sunshine sublime-themes powerline-evil php-extras mmm-mode markdown-mode magit hyde highlight-symbol helm-projectile guide-key gtags fullframe flycheck exec-path-from-shell evil-surround evil-leader evil-jumper evil-indent-textobject emmet-mode diminish dictionary circe avy auto-complete ag)))
+    (htmlize flymake-coffee wakatime-mode zenburn-theme yasnippet yaml-mode wgrep-ag web-mode w3m twittering-mode sunshine sublime-themes powerline-evil php-extras mmm-mode markdown-mode magit hyde highlight-symbol helm-projectile guide-key gtags fullframe flycheck exec-path-from-shell evil-surround evil-leader evil-jumper evil-indent-textobject emmet-mode diminish dictionary circe avy auto-complete ag)))
  '(python-indent-offset 2)
  '(safe-local-variable-values (quote ((no-byte-compile t) (require-final-newline))))
  '(scss-compile-at-save nil)
@@ -321,10 +324,14 @@
  '(web-mode-indent-style 2)
  '(web-mode-markup-indent-offset 2)
  '(web-mode-sql-indent-offset 2)
- '(web-mode-style-padding 0))
+ '(web-mode-style-padding 0)
+ '(whitespace-line-column nil))
+
+;; coffee
 (require 'flymake-coffee)
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
-
+(add-hook 'coffee-mode-hook (lambda () (interactive) (column-marker-1 80)))
+(require 'ac-coffee)
 
 
 ;;; Markdown mode:
@@ -375,7 +382,8 @@ is the buffer location at which the function was found."
  '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "green" :foreground "black"))))
  '(term-color-blue ((t (:background "DodgerBlue2" :foreground "DodgerBlue2"))))
  '(term-color-cyan ((t (:background "CadetBlue2" :foreground "CadetBlue2"))))
- '(term-color-green ((t (:background "LimeGreen" :foreground "LimeGreen")))))
+ '(term-color-green ((t (:background "LimeGreen" :foreground "LimeGreen"))))
+ '(whitespace-line ((t (:background "dark red" :foreground "violet")))))
 
 ;; handle tmux's xterm-keys
 ;; put the following line in your ~/.tmux.conf:
@@ -496,6 +504,48 @@ is the buffer location at which the function was found."
       wakatime-api-key "990f8609-7dd8-425d-bc1e-b689e064f31e"
       wakatime-cli-path "/Library/Frameworks/Python.framework/Versions/3.4/bin/wakatime")
 (global-wakatime-mode)
+
+;; R (ESS)
+(add-to-list 'load-path "~/.emacs.d/src/ESS/lisp")
+(require 'ess-site)
+(define-key ac-completing-map "\M-n" 'ac-next)
+(define-key ac-completing-map "\M-p" 'ac-previous)
+
+;; standard emacs M-x
+(global-set-key (kbd "M-x") 'execute-extended-command)
+
+;; htmlize error fix
+;;http://wenshanren.org/?p=781
+(defun org-font-lock-ensure ()
+  (font-lock-fontify-buffer))
+
+;; font for all unicode characters
+(set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend)
+
+;; whitespace
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(global-whitespace-mode t)
+
+;; http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/
+;; esc quits
+(defun minibuffer-keyboard-quit ()
+  "Abort recursive edit.
+In Delete Selection mode, if the mark is active, just deactivate it;
+then it takes a second \\[keyboard-quit] to abort the minibuffer."
+  (interactive)
+  (if (and delete-selection-mode transient-mark-mode mark-active)
+      (setq deactivate-mark  t)
+    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+    (abort-recursive-edit)))
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(global-set-key [escape] 'evil-exit-emacs-state)
+(global-set-key [escape] 'keyboard-quit) ;; this probably overwrote the last line, whoops
 
 (provide 'emacs)
 ;;; emacs ends here
