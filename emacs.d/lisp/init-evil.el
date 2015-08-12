@@ -147,6 +147,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
     (evil-normal-state)
     (evil-visual-restore)))
 
-  (setq evil-shift-width 2)
+(setq-default evil-shift-width 2)
 
 (provide 'init-evil)
