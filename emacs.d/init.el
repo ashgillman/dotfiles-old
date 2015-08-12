@@ -171,6 +171,8 @@
           (lambda ()
             (evil-define-key 'normal flycheck-mode-map (kbd "]e") 'flycheck-next-error)
             (evil-define-key 'normal flycheck-mode-map (kbd "[e") 'flycheck-previous-error)))
+(global-set-key (kbd "<f8>") 'ispell-word)
+(setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_GB"))
 
 ;;; Helm mode:
 (define-key helm-find-files-map (kbd "C-k") 'helm-find-files-up-one-level)
