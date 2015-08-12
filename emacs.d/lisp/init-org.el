@@ -57,7 +57,8 @@
               (?n . "[[notes:%l][%l-notes]]")
               (?p . "[[papers:%l][%l-paper]]")
               (?t . "%t")
-              (?h . "**** %t\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n*****     :noexport:\n[[papers:%l][%l-paper]] [[bib:%l][BibTeX]]")))))
+              (?a . "\\autocite{%l}")
+              (?h . "*** %t\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n\\cite{%l}\n*****     :noexport:\n[[papers:%l][%l-paper]] [[bib:%l][BibTeX]]")))))
     (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
     (define-key org-mode-map (kbd "C-c (") 'org-mode-reftex-search))
 
