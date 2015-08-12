@@ -10,6 +10,7 @@
     ":"  'eval-expression
     "aa" 'align-regexp
     "a=" 'my-align-single-equals
+    "ag" 'org-agenda
     "b"  'helm-mini             ;; Switch to another buffer
     "B"  'magit-blame-mode
     "d"  (lambda () (interactive) (evil-ex-call-command nil "bdelete" nil))
