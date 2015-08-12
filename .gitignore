@@ -3,3 +3,8 @@
 *.cache
 /emacs.d/elpa/coffee-mode-20150602.2205/coffee-mode-autoloads.el
 /emacs.d/elpa/coffee-mode-20150602.2205/coffee-mode-pkg.el
+/emacs.d/elpa/auto-complete-pcmp-20140226.2251/auto-complete-pcmp-autoloads.el
+/emacs.d/elpa
+/emacs.d/auto-save-list
+/emacs.d/recentf
+/emacs.d/eshell
