@@ -1,1 +1,0 @@
-("~/Documents/workspace/dotfiles/" "~/Documents/workspace/org/org-bib-template/")
