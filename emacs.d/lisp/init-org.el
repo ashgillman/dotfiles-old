@@ -13,7 +13,6 @@
     "p"  'my-org-screenshot
     "d"  'org-deadline
     "s"  'org-schedule
-    "a"  'org-agenda
     "ns" 'org-narrow-to-subtree
     "$"  'org-archive-subtree)
 

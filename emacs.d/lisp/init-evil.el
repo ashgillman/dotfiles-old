@@ -94,17 +94,20 @@
   (define-key evil-normal-state-map (kbd "[i")    'show-first-occurrence)
   (define-key evil-insert-state-map (kbd "C-e")   'end-of-line) ;; I know...
 
-  (evil-define-key 'normal php-mode-map (kbd "]n") 'next-conflict-marker)
-  (evil-define-key 'normal php-mode-map (kbd "[n") 'previous-conflict-marker)
-  (evil-define-key 'visual php-mode-map (kbd "]n") 'next-conflict-marker)
-  (evil-define-key 'visual php-mode-map (kbd "[n") 'previous-conflict-marker)
-
-  (evil-define-key 'normal org-mode-map (kbd "]n") 'org-forward-heading-same-level)
-  (evil-define-key 'normal org-mode-map (kbd "[n") 'org-backward-heading-same-level)
-  (evil-define-key 'normal org-mode-map (kbd "C-S-l") 'org-shiftright)
-  (evil-define-key 'normal org-mode-map (kbd "C-S-h") 'org-shiftleft)
-  (evil-define-key 'insert org-mode-map (kbd "C-S-l") 'org-shiftright)
-  (evil-define-key 'insert org-mode-map (kbd "C-S-h") 'org-shiftleft)
+  (evil-define-key 'normal org-mode-map
+    (kbd "RET") 'org-open-at-point
+    "za"        'org-cycle
+    "zA"        'org-shifttab
+    "zm"        'hide-body
+    "zr"        'show-all
+    "zo"        'show-subtree
+    "zO"        'show-all
+    "zc"        'hide-subtree
+    "zC"        'hide-all
+    (kbd "C-H") 'org-metaleft
+    (kbd "C-J") 'org-metadown
+    (kbd "C-K") 'org-metaup
+    (kbd "C-L") 'org-metaright)
 
   (defun minibuffer-keyboard-quit ()
     "Abort recursive edit.
