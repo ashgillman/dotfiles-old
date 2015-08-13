@@ -50,7 +50,7 @@
          (progn
            ;enable auto-revert-mode to update reftex when bibtex file changes on disk
            (global-auto-revert-mode t)
-           (reftex-parse-all)
+           ;(reftex-parse-all)
            ;add a custom reftex cite format to insert links
            (reftex-set-cite-format
             '((?b . "[[bib:%l][%l-bib]]")
@@ -58,7 +58,7 @@
               (?p . "[[papers:%l][%l-paper]]")
               (?t . "%t")
               (?a . "\\autocite{%l}")
-              (?h . "*** %t\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n\\cite{%l}\n*****     :noexport:\n[[papers:%l][%l-paper]] [[bib:%l][BibTeX]]")))))
+              (?h . "*** %t\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n\\cite{%l}\n****     :noexport:\n[[papers:%l][%l-paper]] [[bib:%l][BibTeX]]")))))
     (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
     (define-key org-mode-map (kbd "C-c (") 'org-mode-reftex-search))
 
@@ -93,5 +93,19 @@
 
 (when (maybe-require-package 'org-ac)
   (org-ac/config-default))
+
+;; Babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((R . t)
+   (latex . t)
+   (sh . t)))
+
+;; RefTeX
+;(setq reftex-bibliography-commands
+;      '("bibliography" "nobibliography" "addbibresource"))
+;'(reftex-use-external-file-finders t)
+;(require 'ox-bibtex)
+(setq reftex-default-bibliography '("./bibliography.bib"))
 
 (provide 'init-org)
