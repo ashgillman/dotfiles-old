@@ -284,14 +284,14 @@
  '(js-indent-level 2)
  '(org-agenda-files
    (quote
-    ("/Users/Ash/Dropbox/org/phd/phd.org" "/Users/Ash/Dropbox/org/phd/bibliography.org" "/Users/Ash/Dropbox/org/litProgrammingTutR.org" "/Users/Ash/Dropbox/org/Getting Started with Orgzly.org" "/Users/Ash/Dropbox/org/general.org")))
+    ("/Users/Ash/Dropbox/org/phd/bibliography.org" "/Users/Ash/Dropbox/org/phd/phd.org" "/Users/Ash/Dropbox/org/litProgrammingTutR.org" "/Users/Ash/Dropbox/org/Getting Started with Orgzly.org" "/Users/Ash/Dropbox/org/general.org" "/Users/Ash/Dropbox/org/coursera/data-visualisation.org")))
  '(org-blank-before-new-entry (quote ((heading) (plain-list-item))))
  '(org-directory "~/Dropbox/org")
  '(org-mobile-directory "~/Dropbox/org/mobile")
  '(org-mobile-inbox-for-pull "~/Dropbox/org/mobile/capture.org")
  '(package-selected-packages
    (quote
-    (htmlize flymake-coffee wakatime-mode zenburn-theme yasnippet yaml-mode wgrep-ag web-mode w3m twittering-mode sunshine sublime-themes powerline-evil php-extras mmm-mode markdown-mode magit hyde highlight-symbol helm-projectile guide-key gtags fullframe flycheck exec-path-from-shell evil-surround evil-leader evil-jumper evil-indent-textobject emmet-mode diminish dictionary circe avy auto-complete ag)))
+    (ox-bibtex htmlize flymake-coffee wakatime-mode zenburn-theme yasnippet yaml-mode wgrep-ag web-mode w3m twittering-mode sunshine sublime-themes powerline-evil php-extras mmm-mode markdown-mode magit hyde highlight-symbol helm-projectile guide-key gtags fullframe flycheck exec-path-from-shell evil-surround evil-leader evil-jumper evil-indent-textobject emmet-mode diminish dictionary circe avy auto-complete ag)))
  '(python-indent-offset 2)
  '(safe-local-variable-values (quote ((no-byte-compile t) (require-final-newline))))
  '(scss-compile-at-save nil)
