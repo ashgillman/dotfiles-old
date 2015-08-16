@@ -180,4 +180,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (setq-default evil-shift-width 2)
 
+;(setq evil-default-cursor t)
+(setq evil-emacs-state-cursor    '("red"     box))
+(setq evil-normal-state-cursor   '("grey60"  box))
+(setq evil-visual-state-cursor   '("orange"  hollow))
+(setq evil-insert-state-cursor   '("green"   bar))
+(setq evil-replace-state-cursor  '("red"     box))
+(setq evil-operator-state-cursor '("red"     hollow))
+
 (provide 'init-evil)
