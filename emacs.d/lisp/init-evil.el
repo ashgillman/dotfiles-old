@@ -87,27 +87,55 @@
 
   ;; Global bindings.
   (define-key evil-normal-state-map (kbd "C-S-P") 'helm-projectile-switch-project)
-  (define-key evil-normal-state-map (kbd "C-p")   'helm-projectile)
+  ;(define-key evil-normal-state-map (kbd "C-p")   'helm-projectile)
   (define-key evil-normal-state-map (kbd "-")     'helm-find-files)
   (define-key evil-normal-state-map (kbd "C-]")   'gtags-find-tag-from-here)
   (define-key evil-normal-state-map (kbd "g/")    'occur-last-search)
   (define-key evil-normal-state-map (kbd "[i")    'show-first-occurrence)
   (define-key evil-insert-state-map (kbd "C-e")   'end-of-line) ;; I know...
+  (define-key evil-normal-state-map (kbd "C-p")
+    (lambda ()
+      (interactive)
+      (previous-line 10)
+      (evil-scroll-line-up 10)))
+  (define-key evil-normal-state-map (kbd "C-n")
+    (lambda ()
+      (interactive)
+      (next-line 10)
+      (evil-scroll-line-down 10)))
 
   (evil-define-key 'normal org-mode-map
-    (kbd "RET") 'org-open-at-point
-    "za"        'org-cycle
-    "zA"        'org-shifttab
-    "zm"        'hide-body
-    "zr"        'show-all
-    "zo"        'show-subtree
-    "zO"        'show-all
-    "zc"        'hide-subtree
-    "zC"        'hide-all
-    (kbd "C-H") 'org-metaleft
-    (kbd "C-J") 'org-metadown
-    (kbd "C-K") 'org-metaup
-    (kbd "C-L") 'org-metaright)
+    (kbd "RET")   'org-open-at-point
+    "za"          'org-cycle
+    "zA"          'org-shifttab
+    "zm"          'hide-body
+    "zr"          'show-all
+    "zo"          'show-subtree
+    "zO"          'show-all
+    "zc"          'hide-subtree
+    "zC"          'hide-all
+    (kbd "C-h")   'org-metaleft
+    (kbd "C-j")   'org-metadown
+    (kbd "C-k")   'org-metaup
+    (kbd "C-l")   'org-metaright
+    (kbd "C-S-h") 'org-shiftleft
+    (kbd "C-S-j") 'org-shiftdown
+    (kbd "C-S-k") 'org-shiftup
+    (kbd "C-S-l") 'org-shiftright)
+
+  (define-key evil-normal-state-map "zp" 'helm-projectile)
+  (define-key evil-normal-state-map "zj" 'evil-window-next)
+  (define-key evil-normal-state-map "zk" 'evil-window-prev)
+
+  (evil-define-key 'insert org-mode-map
+    (kbd "C-h")   'org-metaleft
+    (kbd "C-j")   'org-metadown
+    (kbd "C-k")   'org-metaup
+    (kbd "C-l")   'org-metaright
+    (kbd "C-S-h") 'org-shiftleft
+    (kbd "C-S-j") 'org-shiftdown
+    (kbd "C-S-k") 'org-shiftup
+    (kbd "C-S-l") 'org-shiftright)
 
   (defun minibuffer-keyboard-quit ()
     "Abort recursive edit.
