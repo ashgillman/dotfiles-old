@@ -163,8 +163,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   ; Overload shifts so that they don't lose the selection
   (define-key evil-visual-state-map (kbd ">") 'djoyner/evil-shift-right-visual)
   (define-key evil-visual-state-map (kbd "<") 'djoyner/evil-shift-left-visual)
-  (define-key evil-visual-state-map [tab] 'djoyner/evil-shift-right-visual)
-  (define-key evil-visual-state-map [S-tab] 'djoyner/evil-shift-left-visual)
+  (define-key evil-visual-state-map [tab]     'djoyner/evil-shift-right-visual)
+  (define-key evil-visual-state-map [S-tab]   'djoyner/evil-shift-left-visual)
 
   (defun djoyner/evil-shift-left-visual ()
     (interactive)
