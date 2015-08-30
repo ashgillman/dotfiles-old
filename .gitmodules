@@ -7,3 +7,6 @@
 [submodule "emacs.d/lisp/cmake-font-lock"]
 	path = emacs.d/lisp/cmake-font-lock
 	url = https://github.com/Lindydancer/cmake-font-lock.git
+[submodule "emacs.d/lisp/wc-mode"]
+	path = emacs.d/lisp/wc-mode
+	url = https://github.com/bnbeckwith/wc-mode.git

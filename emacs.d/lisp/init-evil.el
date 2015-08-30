@@ -15,7 +15,7 @@
     "B"  'magit-blame-mode
     "d"  (lambda () (interactive) (evil-ex-call-command nil "bdelete" nil))
     "D"  'open-current-line-in-codebase-search
-    "f"  'helm-imenu            ;; Jump to function in buffer
+    "f"  'helm-semantic-or-imenu ;; Jump to function in buffer
     "g"  'magit-status
     "h"  'fontify-and-browse    ;; HTML-ize the buffer and browse the result
     "l"  'whitespace-mode       ;; Show invisible characters
@@ -31,6 +31,7 @@
     "w"  'save-buffer
     "x"  'helm-M-x
     "y"  'yank-to-x-clipboard))
+(semantic-mode t)
 
 (when (maybe-require-package 'evil-jumper)
   (global-evil-jumper-mode))
@@ -124,8 +125,8 @@
     (kbd "C-S-l") 'org-shiftright)
 
   (define-key evil-normal-state-map "zp" 'helm-projectile)
-  (define-key evil-normal-state-map "zj" 'evil-window-next)
-  (define-key evil-normal-state-map "zk" 'evil-window-prev)
+  (define-key evil-normal-state-map "zj" 'evil-window-prev)
+  (define-key evil-normal-state-map "zk" 'evil-window-next)
 
   (evil-define-key 'insert org-mode-map
     (kbd "C-h")   'org-metaleft
