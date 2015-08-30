@@ -10,7 +10,7 @@
   (defface my-pl-segment1-inactive
     '((t (:foreground "#CEBFF3" :background "#3A2E58")))
     "Powerline first segment inactive face.")
-  
+
   (defface my-pl-segment2-active
     '((t (:foreground "#F5E39F" :background "#8A7119")))
     "Powerline second segment active face.")
@@ -83,5 +83,8 @@
                        (concat (powerline-render lhs)
                                (powerline-fill seg3 (powerline-width rhs))
                                (powerline-render rhs))))))))
-  
+
+(display-time-mode t)
+(setq display-time-24hr-format t)
+
 (provide 'init-powerline)

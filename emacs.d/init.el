@@ -39,7 +39,7 @@
 (eval-after-load "vc" '(setq vc-handled-backends nil))
 (setq vc-follow-symlinks t)
 (setq large-file-warning-threshold nil)
-(setq split-width-threshold nil)
+(setq split-width-threshold 160)
 (setq visible-bell t)
 
 ;;; File type overrides.
