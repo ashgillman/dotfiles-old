@@ -57,7 +57,15 @@
   (require 'org)
   (org-add-link-type "rtcite" 
                  'org-bibtex-open
-                 'my-rtcite-export-handler))
+                 'my-rtcite-export-handler)
+
+  (advice-add 'org-set-tags :around 'kk/run-with-no-helm)
+
+  (setq org-agenda-window-setup 'reorganize-frame)
+  (setq org-agenda-restore-windows-after-quit t)
+
+  (setq org-todo-keywords
+       '((sequence "TODO" "WAIT" "|" "DONE"))))
 
 (when (maybe-require-package 'org-ac)
   (org-ac/config-default))
@@ -106,5 +114,21 @@
       ("papers" . "./papers/%s.pdf")))
 
 (add-hook 'org-mode-hook 'org-mode-reftex-setup)
+
+(defun kk/run-with-no-helm (orig-func &rest args)
+  "Run org-set-tags without helm."
+  (if (boundp 'helm-mode)
+      (let ((orig-helm-mode helm-mode))
+	(unwind-protect
+	    (progn
+	      (helm-mode 0)
+	      (apply orig-func args)
+	      )
+	  (helm-mode (if orig-helm-mode 1 0))))
+    (apply orig-func args)
+    ))
+
+(when (maybe-require-package 'wc-mode)
+  (add-hook 'org-mode 'wc-mode))
 
 (provide 'init-org)
