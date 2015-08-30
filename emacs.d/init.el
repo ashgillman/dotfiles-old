@@ -55,6 +55,7 @@
 (require 'init-fonts)
 (require 'init-gtags)
 (require 'init-evil)
+(require 'init-eshell)
 (require 'init-maps)
 (require 'init-w3m)
 (require 'init-php)
@@ -548,6 +549,16 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 (global-set-key [escape] 'evil-exit-emacs-state)
 (global-set-key [escape] 'keyboard-quit) ;; this probably overwrote the last line, whoops
+
+;; shell
+(when (maybe-require-package 'multi-term)
+  (setq multi-term-program "/usr/local/bin/zsh"))
+(setq shell-file-name "/bin/zsh")
+
+;; cmake
+(require 'cmake-mode)
+(autoload 'cmake-font-lock-activate "cmake-font-lock" nil t)
+(add-hook 'cmake-mode-hook 'cmake-font-lock-activate)
 
 (provide 'emacs)
 ;;; emacs ends here
