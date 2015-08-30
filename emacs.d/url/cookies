@@ -1,0 +1,19 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".onlinelibrary.wiley.com"
+  [url-cookie "WOLSIGNATURE" "c8cb3b1b-0e2c-4958-9317-c5a3977115c2" "17-Sep-2015 03:44:50.00 GMT" "/" ".onlinelibrary.wiley.com" nil]
+  [url-cookie "REPORTINGWOLSIGNATURE" "3845276536949178660" "17-Sep-2015 03:44:50.00 GMT" "/" ".onlinelibrary.wiley.com" nil])
+ ("onlinelibrary.wiley.com"
+  [url-cookie "EuCookie" "this site uses cookies" "05-Sep-2083 06:58:57.00 GMT" "/" "onlinelibrary.wiley.com" nil]
+  [url-cookie "Version" "1" "05-Sep-2083 06:58:57.00 GMT" "/" "onlinelibrary.wiley.com" nil]
+  [url-cookie "Max-Age" "2147483647" "05-Sep-2083 06:58:57.00 GMT" "/" "onlinelibrary.wiley.com" nil]))
+)
+(setq url-cookie-secure-storage
+ 'nil)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:
