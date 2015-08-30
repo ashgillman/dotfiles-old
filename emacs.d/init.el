@@ -102,6 +102,9 @@
 (maybe-require-package 'coffee-mode)
 (maybe-require-package 'flymake-coffee)
 (maybe-require-package 'htmlize)
+(maybe-require-package 'csv-mode)
+(maybe-require-package 'docker)
+(maybe-require-package 'dockerfile-mode)
 
 (require 'mmm-mode)
 (setq mmm-global-mode 'maybe)
