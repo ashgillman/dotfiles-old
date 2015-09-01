@@ -564,5 +564,17 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (autoload 'cmake-font-lock-activate "cmake-font-lock" nil t)
 (add-hook 'cmake-mode-hook 'cmake-font-lock-activate)
 
+;; Python
+;; http://www.jesshamrick.com/2012/09/18/emacs-as-a-python-ide/
+(when (maybe-require-package 'python-mode)
+  (autoload 'pymacs-apply "pymacs")
+  (autoload 'pymacs-call "pymacs")
+  (autoload 'pymacs-eval "pymacs" nil t)
+  (autoload 'pymacs-exec "pymacs" nil t)
+  (autoload 'pymacs-load "pymacs" nil t)
+  (autoload 'pymacs-autoload "pymacs")
+  (require 'pymacs)
+  (pymacs-load "ropemacs" "rope-"))
+
 (provide 'emacs)
 ;;; emacs ends here
