@@ -16,19 +16,22 @@
     "ns" 'org-narrow-to-subtree
     "$"  'org-archive-subtree)
 
-  (defun my-org-screenshot ()
-    "Take a screenshot into a time stamped unique-named file in the
-  same directory as the org-buffer and insert a link to this file."
-    (interactive)
-    (setq filename
-          (concat
-           (make-temp-name
-            (concat (file-name-nondirectory (buffer-file-name))
-                    "_"
-                    (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
-    (call-process "screencapture" nil nil nil "-i" filename)
-    (insert (concat "[[./" filename "]]"))
-    (org-display-inline-images))
+    (defun my-org-screenshot ()
+      "Take a screenshot into a time stamped unique-named file in the
+    same directory as the org-buffer and insert a link to this file."
+      (interactive)
+      (org-display-inline-images)
+      (setq filename
+            (concat
+             (make-temp-name
+              (concat (file-name-nondirectory (buffer-file-name))
+                      "_imgs/"
+                      (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
+      (unless (file-exists-p (file-name-directory filename))
+        (make-directory (file-name-directory filename)))
+      (call-process "screencapture" nil nil nil "-i" filename)
+      (if (file-exists-p filename)
+        (insert (concat "[[./" filename "]]"))))
 
   (add-hook 'org-mode-hook
             (lambda ()
