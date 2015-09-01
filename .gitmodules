@@ -10,3 +10,9 @@
 [submodule "emacs.d/lisp/wc-mode"]
 	path = emacs.d/lisp/wc-mode
 	url = https://github.com/bnbeckwith/wc-mode.git
+[submodule "emacs.d/Pymacs"]
+	path = emacs.d/Pymacs
+	url = https://github.com/pinard/Pymacs.git
+[submodule "emacs.d/ropemacs"]
+	path = emacs.d/ropemacs
+	url = https://github.com/python-rope/ropemacs.git
