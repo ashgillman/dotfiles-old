@@ -134,4 +134,11 @@
 (when (maybe-require-package 'wc-mode)
   (add-hook 'org-mode 'wc-mode))
 
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((R . t)
+   (python . t)
+   ))
+
 (provide 'init-org)
