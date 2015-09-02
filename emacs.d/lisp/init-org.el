@@ -68,7 +68,7 @@
   (setq org-agenda-restore-windows-after-quit t)
 
   (setq org-todo-keywords
-       '((sequence "TODO" "WAIT" "|" "DONE"))))
+       '((sequence "TODO" "WAIT" "ONGO" "|" "DONE" "CANC"))))
 
 (when (maybe-require-package 'org-ac)
   (org-ac/config-default))
