@@ -1,0 +1,1 @@
+/Users/Ash/.emacs.d
