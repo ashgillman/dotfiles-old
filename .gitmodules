@@ -25,3 +25,6 @@
 [submodule "emacs.d/emacs-color-theme-solarized"]
 	path = emacs.d/emacs-color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized
+[submodule "emacs.d/src/ESS"]
+	path = emacs.d/src/ESS
+	url = https://github.com/emacs-ess/ESS.git
