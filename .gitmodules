@@ -1,6 +1,6 @@
 [submodule "emacs.d/lisp/ac-coffee"]
 	path = emacs.d/lisp/ac-coffee
-	url = "https://github.com/akfish/ac-coffee.git    "
+	url = https://github.com/akfish/ac-coffee.git
 [submodule "emacs.d/lisp/emacs-emoji-cheat-sheet-plus"]
 	path = emacs.d/lisp/emacs-emoji-cheat-sheet-plus
 	url = https://github.com/syl20bnr/emacs-emoji-cheat-sheet-plus
