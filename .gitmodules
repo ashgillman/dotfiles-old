@@ -28,3 +28,9 @@
 [submodule "emacs.d/src/ESS"]
 	path = emacs.d/src/ESS
 	url = https://github.com/emacs-ess/ESS.git
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/bundle/vim-wakatime"]
+	path = vim/bundle/vim-wakatime
+	url = git://github.com/wakatime/vim-wakatime.git
