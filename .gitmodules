@@ -19,3 +19,6 @@
 [submodule "emacs.d/lisp/sr-speedbar"]
 	path = emacs.d/lisp/sr-speedbar
 	url = https://github.com/emacsmirror/sr-speedbar.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git

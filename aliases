@@ -1,0 +1,2 @@
+alias emacsgui='open -a /Applications/Emacs.app $1'
+alias initdocker=". '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
