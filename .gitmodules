@@ -11,8 +11,11 @@
 	path = emacs.d/lisp/wc-mode
 	url = https://github.com/bnbeckwith/wc-mode.git
 [submodule "emacs.d/lisp/Pymacs"]
-	path = emacs.d/Pymacs
+	path = emacs.d/lisp/Pymacs
 	url = https://github.com/pinard/Pymacs.git
 [submodule "emacs.d/lisp/ropemacs"]
-	path = emacs.d/ropemacs
+	path = emacs.d/lisp/ropemacs
 	url = https://github.com/python-rope/ropemacs.git
+[submodule "emacs.d/lisp/sr-speedbar"]
+	path = emacs.d/lisp/sr-speedbar
+	url = https://github.com/emacsmirror/sr-speedbar.git
