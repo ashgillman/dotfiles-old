@@ -8,6 +8,10 @@
 /emacs.d/auto-save-list
 /emacs.d/recentf
 /emacs.d/eshell
+/emacs.d/network-security.data
+/emacs.d/url
+/emacs.d/network-security.data
+/emacs.d/url
 *~
 /emacs.d/elpa
   
@@ -15,3 +19,4 @@
 emacs.d/projectile-bookmarks.eld
 *.dat
 emacs.d/ac-comphist.dat
+/emacs.d/.emacs.desktop

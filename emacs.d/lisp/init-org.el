@@ -52,13 +52,13 @@
                      (match-string 1 path)))
            (path (substring path 0 (match-beginning 0))))
       (cond ((eq format 'latex)
-             (if (or (not desc) 
+             (if (or (not desc)
                      (equal 0 (search "rtcite:" desc)))
                  (format "\\cite{%s}" search)
                (format "\\cite[%s]{%s}" desc search))))))
 
   (require 'org)
-  (org-add-link-type "rtcite" 
+  (org-add-link-type "rtcite"
                  'org-bibtex-open
                  'my-rtcite-export-handler)
 
@@ -68,7 +68,10 @@
   (setq org-agenda-restore-windows-after-quit t)
 
   (setq org-todo-keywords
-       '((sequence "TODO" "WAIT" "ONGO" "|" "DONE" "CANC"))))
+       '((sequence "TODO" "WAIT" "ONGO" "|" "DONE" "CANC")))
+
+  (setq reftex-default-bibliography '("/Users/Ash/Dropbox/org/phd/bibliography.bib"))
+  )
 
 (when (maybe-require-package 'org-ac)
   (org-ac/config-default))
