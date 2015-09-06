@@ -18,11 +18,12 @@ fi
 apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
 add-apt-repository \
   "deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main"
+add-apt-repository ppa:git-core/ppa
 
 # Install applications
+apt-get build-dep emacs
 apt-get install -y \
     build-essential \
-    build-dep
     curl \
     google-chrome-stable \
     gnome-tweak-tool \
