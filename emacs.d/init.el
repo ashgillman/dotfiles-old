@@ -290,7 +290,7 @@
  '(js-indent-level 2)
  '(org-agenda-files
    (quote
-    ("/Users/Ash/Dropbox/org/phd/phd.org" "/Users/Ash/Dropbox/org/phd/mypapers/overview/overview.org" "/Users/Ash/Dropbox/org/phd/mypapers/overview/methods.org" "/Users/Ash/Dropbox/org/phd/bibliography.org" "/Users/Ash/Dropbox/org/litProgrammingTutR.org" "/Users/Ash/Dropbox/org/Getting Started with Orgzly.org" "/Users/Ash/Dropbox/org/general.org" "/Users/Ash/Dropbox/org/coursera/data-visualisation.org")))
+    ("~/Dropbox/org/phd/phd.org" "~/Dropbox/org/phd/mypapers/overview/overview.org" "~/Dropbox/org/phd/mypapers/overview/methods.org" "~/Dropbox/org/phd/bibliography.org" "~/Dropbox/org/litProgrammingTutR.org" "~/Dropbox/org/Getting Started with Orgzly.org" "~/Dropbox/org/general.org" "~/Dropbox/org/coursera/data-visualisation.org")))
  '(org-blank-before-new-entry (quote ((heading) (plain-list-item))))
  '(org-directory "~/Dropbox/org")
  '(org-mobile-directory "~/Dropbox/org/mobile")

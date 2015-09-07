@@ -70,7 +70,9 @@
   (setq org-todo-keywords
        '((sequence "TODO" "WAIT" "ONGO" "|" "DONE" "CANC")))
 
-  (setq reftex-default-bibliography '("/Users/Ash/Dropbox/org/phd/bibliography.bib"))
+  (setq reftex-default-bibliography '("~/Dropbox/org/phd/bibliography.bib"))
+
+  (setq org-src-fontify-natively t)
   )
 
 (when (maybe-require-package 'org-ac)
