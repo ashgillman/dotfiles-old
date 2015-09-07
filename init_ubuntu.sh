@@ -25,10 +25,10 @@ apt-get build-dep emacs
 apt-get install -y \
     build-essential \
     curl \
-    google-chrome-stable \
-    gnome-tweak-tool \
+    dropbox \
     git \
-    nautilus-dropbox \
+    gnome-tweak-tool \
+    google-chrome-stable \
     python \
     python-pip \
     python3 \
