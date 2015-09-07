@@ -39,6 +39,7 @@ apt-get install -y \
 apt-get build-dep -y emacs24
 command -v docker >/dev/null 2>&1 && echo "docker already installed" || \
     sudo -u $SUDO_USER curl -sSL https://get.docker.com/ | sh
+usermod -aG docker $SUDO_USER
 
 # Dotfile settings
 sudo -u $SUDO_USER \
