@@ -23,6 +23,7 @@ add-apt-repository ppa:git-core/ppa
 # Install applications
 apt-get build-dep emacs
 apt-get install -y \
+    biber \
     build-essential \
     curl \
     dropbox \
@@ -32,8 +33,12 @@ apt-get install -y \
     python \
     python-pip \
     python3 \
+    python3-imaging \
     python3-pip \
     silversearcher-ag \
+    texlive \
+    texlive-bibtex-extra \
+    texlive-latex-extra \
     vim \
     zsh
 apt-get build-dep -y emacs24
@@ -67,6 +72,10 @@ echo "Currently installed $(emacs --version | grep -o [0-9].[.][0-9])" || \
     ( bash ./configure && make && make install )
 cp ~/proj/dotfiles/Emacs.desktop /usr/share/applications/Emacs.desktop
 pip install wakatime
+
+# Python tools
+pip  install numpy scipy
+pip3 install numpy scipy
 
 # Use zsh
 chsh -s /bin/zsh
