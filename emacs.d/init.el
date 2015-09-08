@@ -581,5 +581,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Speedbar
 (require 'sr-speedbar)
 
+;; octave mode
+(add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
+
 (provide 'emacs)
 ;;; emacs ends here
