@@ -143,7 +143,6 @@
  '((R . t)
    (python . t)
    (sh . t)
-   (bash . t)
    ))
 
 (provide 'init-org)
