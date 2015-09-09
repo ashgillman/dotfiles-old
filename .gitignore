@@ -20,3 +20,6 @@ emacs.d/projectile-bookmarks.eld
 *.dat
 emacs.d/ac-comphist.dat
 /emacs.d/.emacs.desktop
+/Emacs.desktop
+*#*#
+/emacs.d/.emacs.desktop.lock
