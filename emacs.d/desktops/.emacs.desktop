@@ -1,0 +1,52 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue Sep  8 11:47:28 2015
+;; Desktop file format version 206
+;; Emacs version 24.5.3
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (21998 15920 655741 624000) (desktop . "206") "ash@daftpunk-rbh.nexus.csiro.au" nil nil ((((font-backend xft x) (font . "-unknown-Droid Sans Mono-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#DEDEDE") (background-color . "#161A1F") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 10) (right-fringe . 11) (scroll-bar-foreground) (scroll-bar-background . "grey75") (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen . maximized) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "red") (sticky) (environment) (powerline-cache) (frameset--id . "FD7C-7E9D-6C67-C780") (frameset--mini t . t) (height . 68) (width . 237) (modeline . t) (minibuffer . t) (unsplittable) (left . 0) (top . 24) (icon-name) (visibility . t) (display . ":1") (explicit-name)) ((min-height . 12) (min-width . 20) (min-height-ignore . 6) (min-width-ignore . 10) (min-height-safe . 3) (min-width-safe . 4) (min-pixel-height . 180) (min-pixel-width . 140) (min-pixel-height-ignore . 90) (min-pixel-width-ignore . 70) (min-pixel-height-safe . 45) (min-pixel-width-safe . 28)) vc (pixel-width . 1680) (pixel-height . 1011) (total-width . 240) (total-height . 67) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (hc (pixel-width . 1680) (pixel-height . 786) (total-width . 240) (total-height . 52) (normal-height . 0.6900826446280992) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 707) (pixel-height . 786) (total-width . 101) (total-height . 52) (normal-height . 1.0) (normal-width . 0.4334763948497854) (buffer "overview.org" (selected) (hscroll . 0) (fringes 10 11 nil) (margins 5) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 780) (start . 1))) (leaf (last . t) (pixel-width . 973) (pixel-height . 786) (total-width . 139) (total-height . 52) (normal-height . 1.0) (normal-width . 0.5665236051502147) (buffer "bibliography.org" (selected) (hscroll . 0) (fringes 10 11 nil) (margins 5) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)))) (leaf (pixel-width . 1680) (pixel-height . 135) (total-width . 240) (total-height . 9) (normal-height . 0.16979547293817596) (normal-width . 1.0) (buffer "methods.org" (selected) (hscroll . 0) (fringes 10 11 nil) (margins 5) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 2189) (start . 1285))) (leaf (last . t) (pixel-width . 1680) (pixel-height . 90) (total-width . 240) (total-height . 6) (normal-height . 0.1401218824337249) (normal-width . 1.0) (buffer "*Desktop Menu*" (selected . t) (hscroll . 0) (fringes 10 11 nil) (margins 5) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 52) (start . 1)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist '((105) (48 . "#+BEGIN_LATEX\n\\printbibliography\n#+END_LATEX\n")))
+(setq file-name-history '("~/Dropbox/org/phd/bibliography.org" "~/Dropbox/org/phd/mypapers/overview/overview.tex" "~/proj/dotfiles/init_ubuntu.sh" "~/Dropbox/org/phd/mypapers/overview/methods.org" "~/Dropbox/org/phd/phd (daftpunk-rbh's conflicted copy 2015-09-08).org" "~/Dropbox/org/phd/phd.org" "~/Dropbox/org/phd/mypapers/overview/overview.org" "~/.xpdfrc" "/home/ash/proj/dotfiles/.git/COMMIT_EDITMSG" "/home/ash/Dropbox/org/phd/.git/COMMIT_EDITMSG" "/home/ash/proj/dotfiles/.git/COMMIT_EDITMSG" "/home/ash/proj/STIR-hello-world/.git/COMMIT_EDITMSG" "~/proj/STIR-hello-world/fbp2d.par" "~/proj/STIR-hello-world/fbp2d.par.par" "~/proj/dotfiles/emacs.d/init.el" "/usr/local/bin/wakatime"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/ash/Dropbox/org/phd/mypapers/overview/methods.org"
+  "methods.org"
+  'org-mode
+  '(auto-fill-mode visual-line-mode undo-tree-mode auto-complete-mode guide-key-mode projectile-mode helm-mode linum-mode wakatime-mode global-whitespace-mode global-auto-revert-mode flyspell-mode)
+  2189
+  '(2236 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/home/ash/Dropbox/org/phd/bibliography.org"
+  "bibliography.org"
+  'org-mode
+  '(auto-fill-mode visual-line-mode undo-tree-mode auto-complete-mode guide-key-mode projectile-mode helm-mode linum-mode wakatime-mode global-whitespace-mode global-auto-revert-mode flyspell-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/home/ash/Dropbox/org/phd/mypapers/overview/overview.org"
+  "overview.org"
+  'org-mode
+  '(auto-fill-mode visual-line-mode undo-tree-mode auto-complete-mode guide-key-mode projectile-mode helm-mode linum-mode wakatime-mode global-whitespace-mode global-auto-revert-mode flyspell-mode)
+  780
+  '(3286 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . iso-latin-1-unix) (overwrite-mode) (truncate-lines)))
+

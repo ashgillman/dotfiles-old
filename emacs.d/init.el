@@ -290,7 +290,7 @@
  '(js-indent-level 2)
  '(org-agenda-files
    (quote
-    ("/Users/Ash/Dropbox/org/phd/phd.org" "/Users/Ash/Dropbox/org/phd/mypapers/overview/overview.org" "/Users/Ash/Dropbox/org/phd/mypapers/overview/methods.org" "/Users/Ash/Dropbox/org/phd/bibliography.org" "/Users/Ash/Dropbox/org/litProgrammingTutR.org" "/Users/Ash/Dropbox/org/Getting Started with Orgzly.org" "/Users/Ash/Dropbox/org/general.org" "/Users/Ash/Dropbox/org/coursera/data-visualisation.org")))
+    ("~/Dropbox/org/phd/phd.org" "~/Dropbox/org/phd/mypapers/overview/overview.org" "~/Dropbox/org/phd/mypapers/overview/methods.org" "~/Dropbox/org/phd/bibliography.org" "~/Dropbox/org/litProgrammingTutR.org" "~/Dropbox/org/Getting Started with Orgzly.org" "~/Dropbox/org/general.org" "~/Dropbox/org/coursera/data-visualisation.org")))
  '(org-blank-before-new-entry (quote ((heading) (plain-list-item))))
  '(org-directory "~/Dropbox/org")
  '(org-mobile-directory "~/Dropbox/org/mobile")
@@ -387,6 +387,7 @@ is the buffer location at which the function was found."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "#161A1F" :foreground "#DEDEDE" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "unknown" :family "droid sans mono"))))
  '(comint-highlight-prompt ((t nil)))
  '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "green" :foreground "black"))))
  '(term-color-blue ((t (:background "DodgerBlue2" :foreground "DodgerBlue2"))))
@@ -583,6 +584,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; octave mode
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
+
+;; Destop menu
+(require 'desktop-menu)
 
 (provide 'emacs)
 ;;; emacs ends here

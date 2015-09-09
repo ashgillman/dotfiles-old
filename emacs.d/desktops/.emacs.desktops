@@ -1,0 +1,10 @@
+;; ------------------------------------------------------------
+;; Desktop Files for Emacs in directory /home/ash/.emacs.d/desktops
+;; ------------------------------------------------------------
+;; Created Tue Sep  8 11:44:55 2015
+;; Emacs version 24.5.3
+
+(setq desktop-menu--desktops
+      (list
+       '("overview" ".emacs.desktop")
+       ))

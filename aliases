@@ -1,2 +1,6 @@
-alias emacsgui='open -a /Applications/Emacs.app $1'
-alias initdocker=". '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
+if [[ `uname` == 'Linux' ]]; then
+  alias fiji="docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY=$DISPLAY -v `pwd`:/fiji/data fiji/fiji"
+else
+  alias emacsgui='open -a /Applications/Emacs.app $1'
+  alias initdocker=". '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
+fi
