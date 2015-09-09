@@ -107,9 +107,23 @@
             (?p . "[[papers:%l][%l-paper]]")
             (?t . "\\textcite{%l}")
             (?a . "\\autocite{%l}")
-            (?h . "*** %t\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n\\fullcite{%l}\n****     :noexport:\n[[papers:%l][%l-paper]] [[bib:%l][BibTeX]]")))))
+            (?h . "*** %t\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n\\fullcite{%l}\n****     :noexport:\n[[papers:%l][%l-paper]] [[bib:%l][BibTeX]]")))
+         ))
   (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
   (define-key org-mode-map (kbd "C-c (") 'org-mode-reftex-search))
+
+;(eval-after-load 'reftex-vars
+;  '(progn
+;      (add-to-list 'reftex-cite-format-builtin
+;                   '(org "Org-mode citation"
+;                         ((?b . "[[bib:%l][%l-bib]]")
+;                          (?n . "[[notes:%l][%l-notes]]")
+;                          (?p . "[[papers:%l][%l-paper]]")
+;                          (?t . "\\textcite{%l}")
+;                          (?a . "\\autocite{%l}")
+;                          (?h . "*** %t\n:PROPERTIES:\n:Custom_ID: %l\n:END:\n\\fullcite{%l}\n****     :noexport:\n[[papers:%l][%l-paper]] [[bib:%l][BibTeX]]")
+;                          (?d . ",%l")            ; for appending
+;                          )))))
 
 (defun org-mode-reftex-search ()
   ;;jump to the notes for the paper pointed to at from reftex search

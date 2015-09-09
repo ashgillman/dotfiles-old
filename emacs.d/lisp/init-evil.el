@@ -107,14 +107,15 @@
 
   (evil-define-key 'normal org-mode-map
     (kbd "RET")   'org-open-at-point
-    "za"          'org-cycle
     "zA"          'org-shifttab
-    "zm"          'hide-body
-    "zr"          'show-all
-    "zo"          'show-subtree
-    "zO"          'show-all
-    "zc"          'hide-subtree
     "zC"          'hide-all
+    "zO"          'show-all
+    "za"          'org-cycle
+    "zc"          'hide-subtree
+    "zm"          'hide-body
+    "zo"          'show-subtree
+    "zr"          'show-all
+    "zt"          'org-babel-tangle
     (kbd "C-h")   'org-metaleft
     (kbd "C-j")   'org-metadown
     (kbd "C-k")   'org-metaup

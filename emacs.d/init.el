@@ -581,5 +581,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Speedbar
 (require 'sr-speedbar)
 
+;; Destop menu
+(require 'desktop-menu)
+
 (provide 'emacs)
 ;;; emacs ends here

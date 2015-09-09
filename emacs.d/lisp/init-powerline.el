@@ -61,7 +61,7 @@
                                          (powerline-raw erc-modified-channels-object seg2 'l))
                                        (powerline-major-mode seg2 'l)
                                        (powerline-process seg2)
-                                       (powerline-minor-modes seg2 'l)
+;;                                       (powerline-minor-modes seg2 'l)
                                        (powerline-narrow seg2 'l)
                                        (powerline-raw " " seg2)
                                        (funcall separator-left seg2 seg3)
