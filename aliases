@@ -6,3 +6,7 @@ else
 fi
 
 alias npm-exec='PATH=$(npm bin):$PATH'
+
+alias drun="docker run --rm -it -v `pwd`:/data -w /data"
+alias dpython3="drun continuumio/anaconda3 python"
+alias dpython2="drun continuumio/anaconda python"

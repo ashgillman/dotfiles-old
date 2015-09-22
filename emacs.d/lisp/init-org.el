@@ -159,6 +159,7 @@
  '((R . t)
    (python . t)
    (sh . t)
+   (octave . t)
    ))
 
 (provide 'init-org)

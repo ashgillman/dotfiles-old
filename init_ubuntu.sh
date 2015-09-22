@@ -19,6 +19,7 @@ apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
 add-apt-repository \
   "deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main"
 add-apt-repository ppa:git-core/ppa
+apt-add-repository ppa:octave/stable
 
 # Install applications
 apt-get build-dep emacs
@@ -30,6 +31,7 @@ apt-get install -y \
     git \
     gnome-tweak-tool \
     google-chrome-stable \
+    liboctave-dev \
     python \
     python-pip \
     python3 \
@@ -74,8 +76,8 @@ cp ~/proj/dotfiles/Emacs.desktop /usr/share/applications/Emacs.desktop
 pip install wakatime
 
 # Python tools
-pip  install numpy scipy
-pip3 install numpy scipy
+pip  install numpy scipy matplotlib
+pip3 install numpy scipy matplotlib
 
 # Use zsh
 chsh -s /bin/zsh
