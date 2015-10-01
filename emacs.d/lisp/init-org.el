@@ -29,7 +29,12 @@
                       (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
       (unless (file-exists-p (file-name-directory filename))
         (make-directory (file-name-directory filename)))
-      (call-process "screencapture" nil nil nil "-i" filename)
+      ; take screenshot
+      (if (eq system-type 'darwin)
+          (call-process "screencapture" nil nil nil "-i" filename))
+      (if (eq system-type 'gnu/linux)
+          (call-process "import" nil nil nil filename))
+      ; insert into file if correctly taken
       (if (file-exists-p filename)
         (insert (concat "[[./" filename "]]"))))
 
@@ -83,6 +88,7 @@
  'org-babel-load-languages
  '((R . t)
    (latex . t)
+   (dot . t)
    (sh . t)))
 
 ;; RefTeX
@@ -90,20 +96,23 @@
 ;      '("bibliography" "nobibliography" "addbibresource"))
 ;'(reftex-use-external-file-finders t)
 ;(require 'ox-bibtex)
-(setq reftex-default-bibliography '("./bibliography.bib"))
+;(setq reftex-default-bibliography '("./bibliography.bib"))
 
 ;; https://tincman.wordpress.com/2011/01/04/research-paper-management-with-emacs-org-mode-and-reftex/
 (defun org-mode-reftex-setup ()
   (load-library "reftex")
+  (setq-local tex-start-of-header "%\\*\\*start of header")
+  (setq-local tex-end-of-header "%\\*\\*end of header")
+  (message "Debug: %s" (buffer-file-name))
   (and (buffer-file-name) (file-exists-p (buffer-file-name))
        (progn
          ;enable auto-revert-mode to update reftex when bibtex file changes on disk
          (global-auto-revert-mode t)
-         ;(reftex-parse-all)
+         (reftex-parse-all)
          ;add a custom reftex cite format to insert links
          (reftex-set-cite-format
           '((?b . "[[bib:%l][%l-bib]]")
-            (?n . "[[notes:%l][%l-notes]]")
+            (?n . "[[notes:%l][\\textcite{%l}]]")
             (?p . "[[papers:%l][%l-paper]]")
             (?t . "\\textcite{%l}")
             (?a . "\\autocite{%l}")
