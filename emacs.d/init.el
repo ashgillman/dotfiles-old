@@ -588,5 +588,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; Destop menu
 (require 'desktop-menu)
 
+;; Transparency
+;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
+(set-frame-parameter (selected-frame) 'alpha '(90 50))
+(add-to-list 'default-frame-alist '(alpha 90 50))
+
 (provide 'emacs)
 ;;; emacs ends here
