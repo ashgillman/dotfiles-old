@@ -568,6 +568,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (add-hook 'cmake-mode-hook 'cmake-font-lock-activate)
 
 ;; Python
+(add-hook 'python-mode-hook 'auto-fill-mode)
 ;; http://www.jesshamrick.com/2012/09/18/emacs-as-a-python-ide/
 ;; (when (maybe-require-package 'python-mode)
 ;;   (autoload 'pymacs-apply "pymacs")
@@ -592,6 +593,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
 (set-frame-parameter (selected-frame) 'alpha '(90 50))
 (add-to-list 'default-frame-alist '(alpha 90 50))
+
+;; dired
+(setq dired-listing-switches "-alh")
+
+(setq wakatime-cli-path "/usr/local/bin/wakatime")
 
 (provide 'emacs)
 ;;; emacs ends here

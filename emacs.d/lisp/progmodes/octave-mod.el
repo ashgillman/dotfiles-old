@@ -513,7 +513,7 @@ including a reproducible test case and send the message."
   (setq imenu-generic-expression octave-mode-imenu-generic-expression
         imenu-case-fold-search nil)
 
-  (octave-add-octave-menu)
+;  (octave-add-octave-menu)
   (octave-initialize-completions)
   (run-mode-hooks 'octave-mode-hook))
 
