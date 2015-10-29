@@ -1,10 +1,16 @@
+alias npm-exec='PATH=$(npm bin):$PATH'
+
+alias drun="docker run --rm -it -v `pwd`:/data -w /data"
+
 if [[ `uname` == 'Linux' ]]; then
+  alias dgui="drun -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY=$DISPLAY"
+  alias dpython3="dgui continuumio/anaconda3 python"
+  alias dpython2="dgui continuumio/anaconda python"
+
   alias fiji="docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY=$DISPLAY -v `pwd`:/fiji/data fiji/fiji"
 else
   alias emacsgui='open -a /Applications/Emacs.app $1'
   alias initdocker=". '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'"
-
-  alias readlink=greadlink
 fi
 
 alias npm-exec='PATH=$(npm bin):$PATH'
@@ -12,9 +18,8 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 function drun {
   docker run --rm -it -v "$(pwd)":/data -w /data $@
 }
-#alias drun="docker run --rm -it -v $(pwd | sed 's/ /\\ /g'):/data -w /data"
-#alias drun='docker run --rm -it -v "$(pwd):/data" -w /data'
 
 alias dpython3="drun continuumio/anaconda3 python"
 alias dpython2="drun continuumio/anaconda python"
 alias doctave="drun schickling/octave"
+
