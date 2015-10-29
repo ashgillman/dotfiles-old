@@ -295,6 +295,7 @@
  '(org-directory "~/Dropbox/org")
  '(org-mobile-directory "~/Dropbox/org/mobile")
  '(org-mobile-inbox-for-pull "~/Dropbox/org/mobile/capture.org")
+ '(org-pretty-entities t)
  '(org-src-fontify-natively t)
  '(package-selected-packages
    (quote
@@ -387,7 +388,7 @@ is the buffer location at which the function was found."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#161A1F" :foreground "#DEDEDE" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "unknown" :family "droid sans mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#161A1F" :foreground "#DEDEDE" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Menlo"))))
  '(comint-highlight-prompt ((t nil)))
  '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "green" :foreground "black"))))
  '(term-color-blue ((t (:background "DodgerBlue2" :foreground "DodgerBlue2"))))
@@ -510,9 +511,9 @@ is the buffer location at which the function was found."
 
 ;; Wakatime
 (require 'wakatime-mode)
-(setq wakatime-python-bin "/usr/local/bin/python3"
+(setq wakatime-python-bin "/usr/bin/env python"
       wakatime-api-key "990f8609-7dd8-425d-bc1e-b689e064f31e"
-      wakatime-cli-path "/Library/Frameworks/Python.framework/Versions/3.4/bin/wakatime")
+      wakatime-cli-path "/usr/local/bin/wakatime")
 (global-wakatime-mode)
 
 ;; R (ESS)
@@ -531,6 +532,7 @@ is the buffer location at which the function was found."
 
 ;; font for all unicode characters
 (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend)
+'(default ((t (:height 120))))
 
 ;; whitespace
 (setq whitespace-style '(face empty tabs lines-tail trailing))
