@@ -69,27 +69,34 @@
 
   (advice-add 'org-set-tags :around 'kk/run-with-no-helm)
 
-  (setq org-agenda-window-setup 'reorganize-frame)
-  (setq org-agenda-restore-windows-after-quit t)
+  (setq org-agenda-window-setup 'reorganize-frame
+        org-agenda-restore-windows-after-quit t
+        org-todo-keywords
+          '((sequence "TODO" "WAIT" "ONGO" "|" "DONE" "CANC"))
+        reftex-default-bibliography
+          '("~/Dropbox/org/phd/bibliography.bib")
+        org-src-fontify-natively t
+        org-adapt-indentation nil)
 
-  (setq org-todo-keywords
-       '((sequence "TODO" "WAIT" "ONGO" "|" "DONE" "CANC")))
+  ;; Babel
+  (org-babel-do-load-languages
+  'org-babel-load-languages
+  '((R . t)
+    (latex . t)
+    (sh . t)))
 
-  (setq reftex-default-bibliography '("~/Dropbox/org/phd/bibliography.bib"))
+  (require 'ox-latex)
+  (add-to-list 'org-latex-classes
+              '("beamer"
+                "\\documentclass\[presentation\]\{beamer\}"
+                ("\\section\{%s\}" . "\\section*\{%s\}")
+                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+                ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
 
-  (setq org-src-fontify-natively t)
-  )
+)
 
 (when (maybe-require-package 'org-ac)
   (org-ac/config-default))
-
-;; Babel
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((R . t)
-   (latex . t)
-   (dot . t)
-   (sh . t)))
 
 ;; RefTeX
 ;(setq reftex-bibliography-commands
@@ -169,6 +176,8 @@
    (python . t)
    (sh . t)
    (octave . t)
+   (latex . t)
+   (dot . t)
    ))
 
 (provide 'init-org)
