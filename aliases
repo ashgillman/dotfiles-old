@@ -3,7 +3,7 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 alias drun="docker run --rm -it -v `pwd`:/data -w /data"
 
 if [[ `uname` == 'Linux' ]]; then
-  alias dgui="drun -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY=$DISPLAY"
+  alias dgui="drun -v /tmp/.X11-unix:/tmp/.X11-unix:rw -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -v /etc/shadow:/etc/shadow:ro -v /etc/sudoers.d:/etc/sudoers.d:ro -u $USER -e DISPLAY"
   alias dpython3="dgui continuumio/anaconda3 python"
   alias dpython2="dgui continuumio/anaconda python"
 
