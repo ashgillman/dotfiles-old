@@ -86,3 +86,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
