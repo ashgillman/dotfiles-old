@@ -1,6 +1,12 @@
 alias npm-exec='PATH=$(npm bin):$PATH'
 
-alias drun="docker run --rm -it -v `pwd`:/data -w /data"
+function drun {
+  docker run --rm -it -v "$(pwd)":/data -w /data $@
+}
+
+alias dpython3="drun continuumio/anaconda3 python"
+alias dpython2="drun continuumio/anaconda python"
+alias doctave="drun schickling/octave"
 
 if [[ `uname` == 'Linux' ]]; then
   alias dgui="drun -v /tmp/.X11-unix:/tmp/.X11-unix:rw -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro -v /etc/shadow:/etc/shadow:ro -v /etc/sudoers.d:/etc/sudoers.d:ro -u $USER -e DISPLAY"
@@ -14,12 +20,3 @@ else
 fi
 
 alias npm-exec='PATH=$(npm bin):$PATH'
-
-function drun {
-  docker run --rm -it -v "$(pwd)":/data -w /data $@
-}
-
-alias dpython3="drun continuumio/anaconda3 python"
-alias dpython2="drun continuumio/anaconda python"
-alias doctave="drun schickling/octave"
-
