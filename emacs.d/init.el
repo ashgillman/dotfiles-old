@@ -607,5 +607,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (setq wakatime-cli-path "/usr/local/bin/wakatime")
 
+(server-start)
+
 (provide 'emacs)
 ;;; emacs ends here
