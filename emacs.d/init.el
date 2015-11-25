@@ -614,5 +614,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; server
 (server-start)
 
+;; server
+(server-start)
+
 (provide 'emacs)
 ;;; emacs ends here
