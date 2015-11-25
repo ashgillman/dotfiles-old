@@ -605,7 +605,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; dired
 (setq dired-listing-switches "-alh")
 
-(setq wakatime-cli-path "/usr/local/bin/wakatime")
+;; haskell
+(maybe-require-package 'haskell-mode)
 
 (provide 'emacs)
 ;;; emacs ends here
