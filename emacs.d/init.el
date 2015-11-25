@@ -303,7 +303,7 @@
  '(org-src-fontify-natively t)
  '(package-selected-packages
    (quote
-    (evil sr-speedbar reveal-in-osx-finder python-mode cmake-mode cmake-font-lock dockerfile-mode csv-mode wc-mode multi-term ox-bibtex htmlize flymake-coffee wakatime-mode zenburn-theme yasnippet yaml-mode wgrep-ag web-mode w3m twittering-mode sunshine sublime-themes powerline-evil php-extras mmm-mode markdown-mode magit hyde highlight-symbol helm-projectile guide-key gtags fullframe flycheck exec-path-from-shell evil-surround evil-leader evil-jumper evil-indent-textobject emmet-mode diminish dictionary circe avy auto-complete ag)))
+    (haskell-mode evil sr-speedbar reveal-in-osx-finder python-mode cmake-mode cmake-font-lock dockerfile-mode csv-mode wc-mode multi-term ox-bibtex htmlize flymake-coffee wakatime-mode zenburn-theme yasnippet yaml-mode wgrep-ag web-mode w3m twittering-mode sunshine sublime-themes powerline-evil php-extras mmm-mode markdown-mode magit hyde highlight-symbol helm-projectile guide-key gtags fullframe flycheck exec-path-from-shell evil-surround evil-leader evil-jumper evil-indent-textobject emmet-mode diminish dictionary circe avy auto-complete ag)))
  '(python-indent-offset 4)
  '(safe-local-variable-values (quote ((no-byte-compile t) (require-final-newline))))
  '(scss-compile-at-save nil)
@@ -392,7 +392,7 @@ is the buffer location at which the function was found."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#161A1F" :foreground "#DEDEDE" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "nil" :family "droid sans mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#161A1F" :foreground "#DEDEDE" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Menlo"))))
  '(comint-highlight-prompt ((t nil)))
  '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "green" :foreground "black"))))
  '(term-color-blue ((t (:background "DodgerBlue2" :foreground "DodgerBlue2"))))
