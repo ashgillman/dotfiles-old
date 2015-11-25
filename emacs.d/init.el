@@ -588,6 +588,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (maybe-require-package 'elpy)
 (elpy-enable)
 
+(require 'snakemake-mode)
+(add-to-list 'auto-mode-alist '("\\.rules\\'" . snakemake-mode))
+
 ;; Speedbar
 (require 'sr-speedbar)
 
@@ -607,6 +610,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; haskell
 (maybe-require-package 'haskell-mode)
+
+;; server
+(server-start)
 
 (provide 'emacs)
 ;;; emacs ends here
