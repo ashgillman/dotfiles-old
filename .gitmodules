@@ -34,3 +34,6 @@
 [submodule "vim/bundle/vim-wakatime"]
 	path = vim/bundle/vim-wakatime
 	url = git://github.com/wakatime/vim-wakatime.git
+[submodule "emacs.d/lisp/snakemake-mode"]
+	path = emacs.d/lisp/snakemake-mode
+	url = https://github.com/kyleam/snakemake-mode.git
