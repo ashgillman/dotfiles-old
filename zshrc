@@ -94,5 +94,7 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
+export PROMPT="%n@%m $PROMPT"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
